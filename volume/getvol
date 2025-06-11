@@ -1,0 +1,4 @@
+#!/bin/bash
+
+VOLUME=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\d+%' | head -n1 | tr -d '%')
+notify-send -t 1500 -u low "Volume Control" "$VOLUME%" -h int:value:"$VOLUME" -h string:x-canonical-private-synchronous:volume_notif

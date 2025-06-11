@@ -1,0 +1,16 @@
+#!/bin/bash
+
+export PATH="/home/jackson/.cargo/bin:$PATH"
+
+MIN=0
+MAX=100
+STEP=2
+
+rmpc volume -2
+CUR=$(rmpc volume)
+
+
+notify-send -t 1500 -u low "RMPC Volume" "Level: ${CUR}%" -h int:value:"$CUR" -h string:x-canonical-private-synchronous:brightness_notif
+
+
+exit 0
