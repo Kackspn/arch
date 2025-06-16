@@ -17,7 +17,7 @@ set $notify ~/.config/rmpc/notify
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #---------------------------------------------------------------
-font pango:Hack Nerd Font 8
+font pango: Hack Nerd Font Bold 11
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -299,9 +299,10 @@ bindsym Ctrl+Shift+Mod1+s exec shutdown now
 # Set app shortcuts
 #---------------------------------------------------------------
 
+bindsym Ctrl+Shift+Escape exec --no-startup-id gnome-system-monitor
 bindsym $mod+Shift+Return exec --no-startup-id ~/.zen/bin/zen/zen-bin
 bindsym Ctrl+Mod1+s exec --no-startup-id steam
-bindsym Ctrl+Mod1+f exec --no-startup-id pcmanfm
+bindsym Ctrl+Mod1+f exec --no-startup-id nemo 
 bindsym Ctrl+Shift+Mod1+l exec --no-startup-id lutris
 bindsym Ctrl+Mod1+v exec --no-startup-id flatpak run dev.vencord.Vesktop
 bindsym Ctrl+Mod1+n exec --no-startup-id nicotine
@@ -375,6 +376,6 @@ bindcode Mod1+$KP_1 exec $rmpc togglepause
 bindcode Mod1+$KP_2 exec $rmpc prev
 bindcode Mod1+$KP_3 exec $rmpc next
 bindcode Mod1+$KP_5 exec $notify
-bindcode Mod1+$KP_7 exec $rmpc volume +2 && ~/.config/rmpc/inc
-bindcode Mod1+$KP_4 exec $rmpc volume -2 && ~/.config/rmpc/dec
+bindcode Mod1+$KP_7 exec ~/.config/rmpc/inc
+bindcode Mod1+$KP_4 exec ~/.config/rmpc/dec
 bindcode Mod1+$KP_8 exec ~/.config/rmpc/volume.sh
