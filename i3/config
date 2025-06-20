@@ -28,6 +28,7 @@ font pango: Hack Nerd Font Regular 11
 #---------------------------------------------------------------
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xset s off -dpms
+exec_always --no-startup-id xset r rate 300 40
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -306,7 +307,6 @@ bindsym Ctrl+Mod1+f exec --no-startup-id nemo
 bindsym Ctrl+Shift+Mod1+l exec --no-startup-id lutris
 bindsym Ctrl+Mod1+v exec --no-startup-id flatpak run dev.vencord.Vesktop
 bindsym Ctrl+Mod1+n exec --no-startup-id nicotine
-bindsym Ctrl+Mod1+b exec --no-startup-id ~/.zen/bin/zen/zen-bin
 bindsym Ctrl+Mod1+e exec --no-startup-id eddie-ui
 # Disable touchpad
 bindsym Ctrl+Mod1+0 exec --no-startup-id xinput --disable 21
@@ -380,4 +380,3 @@ bindcode Mod1+$KP_3 exec $rmpc next
 bindcode Mod1+$KP_5 exec $notify
 bindcode Mod1+$KP_7 exec ~/.config/rmpc/inc
 bindcode Mod1+$KP_4 exec ~/.config/rmpc/dec
-bindcode Mod1+$KP_8 exec ~/.config/rmpc/volume.sh
