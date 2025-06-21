@@ -44,7 +44,7 @@ exec_always --no-startup-id xset r rate 300 40
 
 # exec --no-startup-id nm-applet
 # Disable touchpad.
-exec --no-startup-id xinput --disable 21
+exec_always --no-startup-id xinput --disable 21
 # Enable auth popups 
 exec --no-startup-id lxpolkit 
 

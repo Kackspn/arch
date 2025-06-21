@@ -34,7 +34,7 @@ do
   if ["$input" == "2"]; then
     echo "Installing Hyprland"
     echo "-------------------------------------------------------------------------"
-    sudo pacman -S --needed hyprland hyperpaper hyprshot wl-clipboard cargo kitty waybar mpd dunst steam nemo lutris wofi ly polkit zsh rustup npm mangohud os-prober unzip ffmpeg ccache llvm
+    sudo pacman -S --needed hyprland hyperpaper hyprshot wl-clipboard cargo kitty waybar mpd dunst steam nemo lutris wofi ly polkit zsh rustup npm mangohud os-prober unzip ffmpeg ccache llvm xorg-wayland wayland-protocols
     rustup update stable
     cargo install --git https://github.com/mierak/rmpc --locked
     mkdir ~/.config
