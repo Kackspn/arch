@@ -15,12 +15,9 @@
             "default": ""
         }
     },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
+    "tray": {
+      "icon-size": 18,
+      "spacing": 5,
     },
     "pulseaudio": {
         "format": "{icon}  {volume}%",
