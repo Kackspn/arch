@@ -1,0 +1,9 @@
+[Unit]
+Description=Allow backlight to be changed by user
+
+[Service]
+Type=oneshot
+ExecStart=/bin/backlight
+
+[Install]
+WantedBy=multi-user.target

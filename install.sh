@@ -10,7 +10,7 @@ do
   if ["$input" == "1"]; then
     echo "Installing i3"
     echo "-------------------------------------------------------------------------"
-    sudo pacman -S --needed i3 feh maim xclip cargo xorg kitty polybar mpd dunst steam nemo lutris rofi ly polkit zsh rustup npm mangohud os-prober unzip ffmpeg ccache llvm
+    sudo pacman -S --needed i3 feh maim xclip cargo xorg kitty polybar mpd dunst steam nemo lutris rofi ly polkit zsh rustup npm mangohud os-prober unzip ffmpeg ccache llvm jq imagemagick
     rustup update stable
     cargo install --git https://github.com/mierak/rmpc --locked
     mkdir ~/.config
@@ -34,7 +34,7 @@ do
   if ["$input" == "2"]; then
     echo "Installing Hyprland"
     echo "-------------------------------------------------------------------------"
-    sudo pacman -S --needed hyprland hyperpaper hyprshot wl-clipboard cargo kitty waybar mpd dunst steam nemo lutris wofi ly polkit zsh rustup npm mangohud os-prober unzip ffmpeg ccache llvm xorg-wayland wayland-protocols
+    sudo pacman -S --needed hyprland hyperpaper hyprshot wl-clipboard cargo kitty waybar mpd dunst steam nemo lutris wofi ly polkit zsh rustup npm mangohud os-prober unzip ffmpeg ccache llvm xorg-wayland wayland-protocols jq imagemagick
     rustup update stable
     cargo install --git https://github.com/mierak/rmpc --locked
     mkdir ~/.config
