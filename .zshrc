@@ -64,6 +64,7 @@ setopt hist_verify            # show command with history expansion to user befo
 
 # force zsh to show the complete history
 alias sv="sudo nvim"
+alias timeshift="bash -c 'pkexec env $(env) timeshift-launcher'"
 alias grubup="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias gs="git status"
 alias kittyup="curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin"

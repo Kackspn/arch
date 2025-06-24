@@ -5,6 +5,7 @@
 
     # Which monitor should the notifications be displayed on.
     monitor = 0
+    
 
     # Display notification on focused monitor.  Possible modes are:
     #   mouse: follow mouse pointer
@@ -112,7 +113,7 @@
     separator_color = frame
 
     # Sort messages by urgency.
-    sort = yes
+    sort = update
 
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
