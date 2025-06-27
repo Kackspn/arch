@@ -1,6 +1,6 @@
 * {
     /* `otf-font-awesome` and SpaceMono Nerd Font are required to be installed for icons */
-    font-family: "Hack Nerd Font"; 
+    font-family: "Hack Nerd Font", FontAwesome, sans-serif; 
     font-size: 13px;
     transition: background-color .3s ease-out;
 }

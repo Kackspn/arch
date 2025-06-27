@@ -5,8 +5,8 @@ local opts = {
 }
 -- Dir Nav
 keymap.set("n", "<leader>m", ":NvimTreeToggle<CR>", opts)
-keymap.set("n", "<leader>aa", ":bnext<CR>", opts)
-keymap.set("n", "<leader>as", ":bprev<CR>", opts)
+keymap.set("n", "<leader>a", ":bprev<CR>", opts)
+keymap.set("n", "<leader>d", ":bnext<CR>", opts)
 keymap.set("n", "<leader>b", ":bdelete<CR>", opts)
 
 -- Precognition
