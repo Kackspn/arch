@@ -16,23 +16,14 @@ keymap.set("n", "<leader>pt", ":Precognition toggle<CR>", opts)
 keymap.set("n", "<leader>r", ":RustFmt<CR>", opts)
 
 -- Neocodeium
-vim.keymap.set("i", "<C-f>", function()
-  require("neocodeium").accept()
-end)
-vim.keymap.set("i", "<C-t>", function()
-  require("neocodeium").accept_word()
-end)
-vim.keymap.set("i", "<C-l>", function()
-  require("neocodeium").accept_line()
-end)
-vim.keymap.set("i", "<C-e>", function()
-    require("neocodeium").cycle_or_complete()
-end)
-vim.keymap.set("i", "<C-q>", function()
-    require("neocodeium").cycle_or_complete(-1)
-end)
+vim.keymap.set("i", "<C-f>", function() require("neocodeium").accept() end)
+vim.keymap.set("i", "<C-t>", function() require("neocodeium").accept_word() end)
+vim.keymap.set("i", "<C-l>", function() require("neocodeium").accept_line() end)
+vim.keymap.set("i", "<C-e>", function() require("neocodeium").cycle_or_complete() end)
+vim.keymap.set("i", "<C-q>", function() require("neocodeium").cycle_or_complete(-1) end)
 vim.keymap.set("n", "<C-x>", "<cmd>NeoCodeium toggle<CR>", opts)
 vim.keymap.set("i", "<C-x>", "<Escape>:NeoCodeium toggle<CR>i<Right>",opts)
+
 
 --Terminal
 vim.keymap.set("n", "<C-t>", "<cmd>terminal<CR>", opts)
@@ -41,6 +32,8 @@ vim.keymap.set("t", "<C-h>", "<C-\\><C-n><C-w>h", opts)
 vim.keymap.set("t", "<C-j>", "<C-\\><C-n><C-w>j", opts)
 vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-w>k", opts)
 vim.keymap.set("t", "<C-l>", "<C-\\><C-n><C-w>l", opts)
+
+vim.keymap.set("n", "K", function() vim.lsp.buf.hover { border = "single", max_height = 25, max_width = 120 } end)
 
 -- Resize
 vim.keymap.set("n", "<A-k>", "<cmd>resize -2<CR>", opts)
@@ -63,7 +56,7 @@ keymap.set("n", "<leader>k", "<C-w>k", opts) -- Nav Up
 keymap.set("n", "<leader>l", "<C-w>l", opts) -- Nav Right
 
 --LSP
-vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
+-- vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
 vim.keymap.set("n", "<leader>nd", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
 vim.keymap.set("n", "<leader>pd", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
 vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
