@@ -55,13 +55,6 @@ keymap.set("n", "<leader>j", "<C-w>j", opts) -- Nav Down
 keymap.set("n", "<leader>k", "<C-w>k", opts) -- Nav Up 
 keymap.set("n", "<leader>l", "<C-w>l", opts) -- Nav Right
 
---LSP
--- vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
-vim.keymap.set("n", "<leader>nd", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
-vim.keymap.set("n", "<leader>pd", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
-vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
-vim.keymap.set("n", "<leader>pp", "<cmd>Lspsaga peek_definition<CR>", opts)
-
 --Quick Save/Exit
 keymap.set("n", "C", ":w<CR>", opts)
 keymap.set("n", "Q", ":q<CR>", opts)

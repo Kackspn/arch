@@ -18,6 +18,7 @@ local config = function()
       "python",
       "vue",
       "c",
+      "rust",
     },
     auto_install = true,
     highlight = {

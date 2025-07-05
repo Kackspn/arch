@@ -23,8 +23,8 @@ M.config = function()
 			end,
 		},
 		window = {
-			-- completion = cmp.config.window.bordered(),
-			-- documentation = cmp.config.window.bordered(),
+			completion = cmp.config.window.bordered(),
+			documentation = cmp.config.window.bordered(),
 		},
 		mapping = cmp.mapping.preset.insert({
 			["<Left>"] = cmp.mapping.abort(),
