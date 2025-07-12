@@ -6,7 +6,8 @@ opt.shiftwidth = 2
 opt.softtabstop = 2
 opt.expandtab = true
 opt.smartindent = true
-opt.wrap = true
+opt.wrap = false
+opt.autoindent = true
 
 -- Search
 opt.incsearch = true
@@ -19,13 +20,15 @@ opt.number = true
 opt.relativenumber = true
 opt.termguicolors = true
 opt.signcolumn = "yes"
+opt.colorcolumn = "100"
 opt.cmdheight = 1
 opt.scrolloff = 10
 opt.completeopt = "menuone,noinsert,noselect"
 opt.fillchars = {eob = " "}
+opt.winblend = 0
+opt.cursorline = true
 
 -- Behaviour
-vim.diagnostic.config({ virtual_text = false })
 opt.hidden = true
 opt.errorbells = false
 opt.swapfile = false
@@ -37,6 +40,7 @@ opt.splitright = true
 opt.splitbelow = true
 opt.autochdir = false
 opt.iskeyword:append("-")
+opt.path:append("**")
 opt.mouse:append('a')
 opt.clipboard="unnamedplus"
 opt.modifiable = true
