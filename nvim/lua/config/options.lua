@@ -1,45 +1,39 @@
-local opt = vim.opt
+local o = vim.opt
+o.tabstop = 2
+o.shiftwidth = 2
+o.softtabstop = 2
+o.expandtab = true
+o.smartindent = true
+o.wrap = false
+o.autoindent = true
 
--- Tab / Indentation
-opt.tabstop = 2
-opt.shiftwidth = 2
-opt.softtabstop = 2
-opt.expandtab = true
-opt.smartindent = true
-opt.wrap = false
-opt.autoindent = true
+o.incsearch = true
+o.ignorecase = true
+o.smartcase = true
+o.hlsearch = true
 
--- Search
-opt.incsearch = true
-opt.ignorecase = true
-opt.smartcase = true
-opt.hlsearch = false
+o.number = true
+o.relativenumber = true
+o.termguicolors = true
+o.cmdheight = 1
+o.completeopt = "menuone,noinsert,noselect"
+o.fillchars = {eob = " "}
+o.cursorline = true
+o.winborder = 'rounded'
 
--- Appearance
-opt.number = true
-opt.relativenumber = true
-opt.termguicolors = true
-opt.cmdheight = 1
-opt.scrolloff = 10
-opt.completeopt = "menuone,noinsert,noselect"
-opt.fillchars = {eob = " "}
-opt.winblend = 0
-opt.cursorline = true
-
--- Behaviour
-opt.hidden = true
-opt.errorbells = false
-opt.swapfile = false
-opt.backup = false
-opt.undodir = vim.fn.expand("~/.vim/undodir")
-opt.undofile = true
-opt.backspace = "indent,eol,start"
-opt.splitright = true
-opt.splitbelow = true
-opt.autochdir = false
-opt.iskeyword:append("-")
-opt.path:append("**")
-opt.mouse:append('a')
-opt.clipboard="unnamedplus"
-opt.modifiable = true
-opt.encoding = "UTF-8"
+o.hidden = true
+o.errorbells = false
+o.swapfile = false
+o.backup = false
+o.undodir = vim.fn.expand("~/.vim/undodir")
+o.undofile = true
+o.backspace = "indent,eol,start"
+o.splitright = true
+o.splitbelow = true
+o.autochdir = false
+o.iskeyword:append("-")
+o.path:append("**")
+o.mouse:append('a')
+o.clipboard = "unnamedplus"
+o.modifiable = true
+o.encoding = "UTF-8"

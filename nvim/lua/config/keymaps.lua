@@ -1,8 +1,9 @@
 local keymap = vim.keymap
 local opts = {
-  noremap = true,
-  silent = true,
+	noremap = true,
+	silent = true,
 }
+
 -- Dir Nav
 keymap.set("n", "<leader>m", ":NvimTreeToggle<CR>", opts)
 keymap.set("n", "<leader>a", ":bprev<CR>", opts)
@@ -16,13 +17,13 @@ keymap.set("n", "<leader>pt", ":Precognition toggle<CR>", opts)
 keymap.set("n", "<leader>R", ":RustFmt<CR>", opts)
 
 -- Neocodeium
-vim.keymap.set("i", "<C-f>", function() require("neocodeium").accept() end)
-vim.keymap.set("i", "<C-t>", function() require("neocodeium").accept_word() end)
-vim.keymap.set("i", "<C-l>", function() require("neocodeium").accept_line() end)
-vim.keymap.set("i", "<C-e>", function() require("neocodeium").cycle_or_complete() end)
-vim.keymap.set("i", "<C-q>", function() require("neocodeium").cycle_or_complete(-1) end)
-vim.keymap.set("n", "<C-x>", "<cmd>NeoCodeium toggle<CR>", opts)
-vim.keymap.set("i", "<C-x>", "<Escape>:NeoCodeium toggle<CR>i<Right>",opts)
+keymap.set("i", "<C-f>", function() require("neocodeium").accept() end)
+keymap.set("i", "<C-t>", function() require("neocodeium").accept_word() end)
+keymap.set("i", "<C-l>", function() require("neocodeium").accept_line() end)
+keymap.set("i", "<C-e>", function() require("neocodeium").cycle_or_complete() end)
+keymap.set("i", "<C-q>", function() require("neocodeium").cycle_or_complete(-1) end)
+keymap.set("n", "<C-x>", "<cmd>NeoCodeium toggle<CR>", opts)
+keymap.set("i", "<C-x>", "<Escape>:NeoCodeium toggle<CR>i<Right>",opts)
 
 -- Line moving
 vim.keymap.set("n", "<A-J>", ":m .+1<CR>==", opts) -- move line up
@@ -65,5 +66,3 @@ keymap.set("n", "<leader>sh", ":split<CR>", opts) -- H Split
 -- Indenting
 keymap.set("v", "<", "<gv")
 keymap.set("v", ">", ">gv")
-
-

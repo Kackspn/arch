@@ -1,7 +1,7 @@
 require('config.globals')
 require('config.keymaps')
-require('config.options')
 require('config.commands')
+require('config.options')
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   vim.fn.system({
