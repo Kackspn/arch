@@ -60,6 +60,14 @@ keymapset("i", "<C-q>", function() require("neocodeium").cycle_or_complete(-1) e
 keymapset("n", "<C-x>", "<cmd>NeoCodeium toggle<CR>", opts)
 keymapset("i", "<C-x>", "<Escape>:NeoCodeium toggle<CR>i<Right>",opts)
 
+-- Telescope
+keymapset("n", "<leader>fk", ":Telescope keymaps<CR>")
+keymapset("n", "<leader>fh", ":Telescope help_tags<CR>")
+keymapset("n", "<leader>ff", ":Telescope find_files<CR>")
+keymapset("n", "<leader>fa", ":Telescope <CR>")
+keymapset("n", "<leader>fg", ":Telescope live_grep<CR>")
+keymapset("n", "<leader>fb", ":Telescope buffers<CR>")
+
 -----------------------------------------------------
 --- PACKAGES
 -----------------------------------------------------
@@ -75,6 +83,8 @@ vim.pack.add({
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
   { src = "https://github.com/windwp/nvim-autopairs" },
   { src = "https://github.com/monkoose/neocodeium" },
+  { src = "https://github.com/nvim-telescope/telescope.nvim" },
+  { src = "https://github.com/nvim-lua/plenary.nvim" },
 })
 
 -----------------------------------------------------
@@ -148,8 +158,43 @@ lualine.setup({
     }),
   },
 })
+
+require "telescope".setup({
+  defaults = {
+      mappings = {
+        i = {
+          ["<C-j>"] = "move_selection_next",
+          ["<C-k>"] = "move_selection_previous",
+        },
+      },
+    },
+    pickers = {
+      find_files = {
+        theme = "dropdown",
+        previewer = false,
+        hidden = false,
+      },
+      live_grep = {
+        theme = "dropdown",
+        previewer = false,
+      },
+      find_buffers = {
+        theme = "dropdown",
+        previewer = false,
+      },
+    },
+})
 -----------------------------------------------------
 --- MISC AND LSP
 -----------------------------------------------------
+-- vim.lsp.config('rust_analyzer', {
+--   settings = {
+--     ['rust-analyzer'] = {
+--       diagnostics = {
+--         enable = false;
+--       }
+--     }
+--   }
+-- })
 vim.cmd.colorscheme "flow"
-vim.lsp.enable({ "lua_ls", "clangd", "rust-analyzer", "pyright" })
+vim.lsp.enable({ "lua_ls", "clangd", "rust_analyzer", "pyright" })
