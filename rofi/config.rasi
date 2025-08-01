@@ -25,6 +25,7 @@ configuration {
     /* Key binds */
     kb-row-up: "Alt+k";
     kb-row-down: "Alt+j";
+    kb-cancel: "Escape,Super+d";
 }
 
 listview {

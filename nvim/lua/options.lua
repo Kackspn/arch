@@ -11,7 +11,7 @@ o.autoindent = true
 o.incsearch = true
 o.ignorecase = true
 o.smartcase = true
-o.hlsearch = true
+o.hlsearch = false
 
 o.number = true
 o.relativenumber = true

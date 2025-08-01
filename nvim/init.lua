@@ -1,10 +1,10 @@
 -----------------------------------------------------
 --- IMPORT FILES
 -----------------------------------------------------
-require('commands')
 require('options')
-require('nvimcmp')
 require('keymaps')
+require('commands')
+require('nvimcmp')
 
 -----------------------------------------------------
 --- PACKAGES
@@ -23,6 +23,10 @@ vim.pack.add({
   { src = "https://github.com/monkoose/neocodeium" },
   { src = "https://github.com/nvim-telescope/telescope.nvim" },
   { src = "https://github.com/nvim-lua/plenary.nvim" },
+  { src = "https://github.com/machakann/vim-highlightedyank" },
+  { src = "https://github.com/scottmckendry/cyberdream.nvim" },
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+
 })
 
 -----------------------------------------------------
@@ -43,4 +47,5 @@ vim.lsp.config('rust_analyzer', {
   }
 })
 vim.cmd.colorscheme "flow"
+-- vim.cmd.colorscheme "cyberdream"
 vim.lsp.enable({ "lua_ls", "clangd", "rust_analyzer", "pyright", "bashls" })

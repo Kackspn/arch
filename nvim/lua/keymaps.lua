@@ -10,21 +10,13 @@ keymapset("n", "F", ":q!<CR>", opts)
 -- Source file
 keymapset("n", "<leader>o", ":update<CR>:source<CR>")
 
--- LSP
-keymapset("n", "<leader>rn", vim.lsp.buf.rename, opts)
-keymapset("n", "K", vim.lsp.buf.hover, opts)
-keymapset({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
-keymapset("n", "<leader>f", function()
-  vim.lsp.buf.format { async = true }
-end, opts)
-keymapset("n", "<leader>rs", ":LspRestart<CR>", opts)
-keymapset({ "i", "n" }, "<C-h>", vim.lsp.buf.signature_help, opts)
-
 -- Nvim-tree
 keymapset("n", "<leader>m", ":NvimTreeToggle<CR>", opts)
 keymapset("n", "<leader>a", ":bprev<CR>", opts)
 keymapset("n", "<leader>d", ":bnext<CR>", opts)
 keymapset("n", "<leader>b", ":bdelete<CR>", opts)
+keymapset({"i", "n"}, "<C-l>", ":bnext<CR>", opts)
+keymapset({"i", "n"}, "<C-h>", ":bprev<CR>", opts)
 
 -- Panel Nav
 keymapset("n", "<leader>h", "<C-w>h", opts)
@@ -58,3 +50,15 @@ keymapset("n", "<leader>ff", ":Telescope find_files<CR>")
 keymapset("n", "<leader>fa", ":Telescope <CR>")
 keymapset("n", "<leader>fg", ":Telescope live_grep<CR>")
 keymapset("n", "<leader>fb", ":Telescope buffers<CR>")
+
+-- LSP
+keymapset("n", "<leader>rn", vim.lsp.buf.rename, opts)
+keymapset("n", "K", vim.lsp.buf.hover, opts)
+keymapset({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+keymapset("n", "<leader>F", function()
+  vim.lsp.buf.format { async = true }
+end, opts)
+keymapset("n", "<leader>gd", vim.lsp.buf.definition, opts)
+keymapset("n", "<leader>gD", vim.lsp.buf.declaration, opts)
+keymapset("n", "<leader>rs", ":LspRestart<CR>", opts)
+keymapset({ "i", "n" }, "<C-s>", vim.lsp.buf.signature_help, opts)

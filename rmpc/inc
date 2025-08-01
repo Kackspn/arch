@@ -2,7 +2,7 @@
 
 export PATH="/home/jackson/.cargo/bin:$PATH"
 
-rmpc volume +2
+rmpc volume +5
 CUR=$(rmpc volume)
 
 

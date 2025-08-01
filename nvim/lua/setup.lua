@@ -18,32 +18,50 @@ require "flow".setup({
   priority = 1000,
   dark_theme = true,
   high_contrast = false,
+  transparent = true,
   fluo_color = "pink",
-  transparent = false,
   mode = "bright",
   aggressive_spell = false,
 })
+
 
 ------------------------------------------------------------
 require "lazydev".setup()
 
 ------------------------------------------------------------
-require "lualine".setup({
-  options = {
-    theme = "auto",
-    globalstatus = true,
-    section_separators = { left = '', right = '' },
-    component_separators = { left = '', right = '' },
+require "nvim-treesitter.configs".setup{
+  auto_install = true,
+  ensure_installed = {
+    "c",
+    "rust",
+    "lua",
+    "python",
   },
-  sections = {
-    lualine_a = {
-      {
-        "buffers",
-      }
-    },
+  ignore_install = {},
+  sync_install = false,
+  highlight = {
+    enable = true,
+    enabled = true,
+    additional_vim_regex_highlighting = true,
   },
-})
+}
 
+------------------------------------------------------------
+require "lualine".setup({
+ options = {
+      theme = 'auto',
+      globalstatus = true,
+      section_separators = { left = '', right = '' },
+      component_separators = { left = '', right = '' },
+    },
+    sections = {
+      lualine_a = {
+        {
+          "buffers",
+        }
+      },
+    },
+})
 ------------------------------------------------------------
 require "nvim-tree".setup({
   filters = {
