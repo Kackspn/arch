@@ -30,7 +30,7 @@ configuration {
 
 listview {
     columns: 1;
-    lines: 7;
+    lines: 9;
     fixed-height: true;
     fixed-columns: true;
     cycle: false;
@@ -39,7 +39,7 @@ listview {
 }
 
 window {
-    transparency: "real";
+    transparency: false;
     width: 450px;
     border-radius: @b-radius;
     background-color: @wbg-color;
