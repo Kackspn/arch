@@ -23,6 +23,8 @@ keymapset("n", "<leader>h", "<C-w>h", opts)
 keymapset("n", "<leader>j", "<C-w>j", opts)
 keymapset("n", "<leader>k", "<C-w>k", opts)
 keymapset("n", "<leader>l", "<C-w>l", opts)
+keymapset("n", "<leader>sv", ":vsplit<CR>", opts)
+keymapset("n", "<leader>sh", ":split<CR>", opts)
 
 -- Indenting
 keymapset("v", "<", "<gv", opts)
