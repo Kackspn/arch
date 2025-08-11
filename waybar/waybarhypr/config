@@ -8,10 +8,10 @@
     // Choose the order of the modules
     "modules-left": [
         "custom/arch",
-        "dwl/tags",
+        "hyprland/workspaces"
     ],
     "modules-center": [
-        "dwl/window",
+        "hyprland/window"
     ],
     "modules-right": [
         "tray",
@@ -24,6 +24,6 @@
     //Modules configuration
 
     "include": [
-		"~/.config/waybar/waybarmango/modules.json"
+		"~/.config/waybar/waybarhypr/modules.json"
 	]
 }

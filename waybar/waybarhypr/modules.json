@@ -2,23 +2,19 @@
     "custom/arch": {
         "format": "󰣇",
     },
-    "dwl/tags": {
-        "num-tags": 9,
-        "hide-vacant": true,
-        "expand": false,
-        "disable-click": true,
-        "tag-labels": [
-        ],
-    
-    },
-    "dwl/window": {
-        "format": "{app_id} | {title}",
-        "max-length": 50,
-        "rewrite": {
-            " \\| ": ""
+
+
+    "hyprland/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{name}",
+        "format-icons": {
+            "urgent": "",
+            "active": "",
+            "default": ""
         }
     },
-
     "tray": {
       "icon-size": 18,
       "spacing": 5,

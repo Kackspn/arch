@@ -1,11 +1,12 @@
 /*
+!scripts
 !mango
 !nvim.bak
 !fontconfig
 !.zshrc
 !wofi
 !rofi
-!waybar
+!waybar*
 !hypr
 !.gitignore
 !backlight

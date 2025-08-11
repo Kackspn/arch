@@ -73,7 +73,7 @@ window#waybar {
 }
 
 
-#tags button {
+#workspaces button {
   background: transparent;
   font-family:
     SpaceMono Nerd Font,
@@ -84,21 +84,12 @@ window#waybar {
   border:none;
   border-radius: 15px;
 }
-#tags button.focused {
-  background-color: #c0caf5;
-  color: #282828;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding-top: 1px;
-  padding-bottom: 0px;
-  border-radius: 15px;
-}
 
-#tags button.active {
+#workspaces button.active {
     background: #69616a; 
 }
 
-#tags button:hover {
+#workspaces button:hover {
   background: #11111b;
   color: #cdd6f4;
   box-shadow: none;
