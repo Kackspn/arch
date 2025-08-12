@@ -2,4 +2,4 @@
 
 killall waybar
 
-waybar -c ~/.config/waybar/waybarmango/config & -s ~/.config/waybar/waybarmango/style.css
+waybar -c ~/.config/waybar/config & -s ~/.config/waybar/style.css

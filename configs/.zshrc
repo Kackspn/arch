@@ -63,13 +63,14 @@ setopt hist_verify            # show command with history expansion to user befo
 #setopt share_history         # share command history data
 
 # force zsh to show the complete history
+alias sall="sudo -E taskset -c 0-19"
 alias makepkg="taskset -c 0-19 makepkg"
 alias pacseek="taskset -c 0-19 pacseek"
 alias ya="taskset -c 0-19 yay -S --needed"
 alias yas="yay -Qs"
 alias yar="yay -R"
 alias yarp="yay -Rncs"
-alias yup="taskset -c 0-19 yay -Syu"
+alias yup="taskset -c 0-19 yay -Syu && bob update && sudo cp /home/jackson/.local/share/bob/nvim-bin/nvim /sbin"
 alias all="taskset -c 0-19"
 alias pc="taskset -c 0-11"
 alias ec="taskset -c 12-19"
@@ -81,7 +82,7 @@ alias mc="cd ~/Desktop/Minecraft/ && ./ServerStart.sh"
 alias s="sudo -E"
 alias fup="flatpak update -y -v"
 alias sdn="shutdown now"
-alias sup="taskset -c 0-19 sudo pacman -Syu"
+alias sup="taskset -c 0-19 sudo pacman -Syu && bob update && sudo cp /home/jackson/.local/share/bob/nvim-bin/nvim /sbin"
 alias sa="taskset -c 0-19 sudo pacman -S --needed" 
 alias sarp="sudo pacman -Rncs"
 alias sar="sudo pacman -R"
@@ -297,7 +298,6 @@ fi
 if [ -f /etc/zsh_command_not_found ]; then
     . /etc/zsh_command_not_found
 fi
-export PATH="$PATH:/opt/nvim/"
 source /usr/share/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 export OBS_USE_EGL=1 obs
@@ -334,3 +334,12 @@ export PATH="$PATH:/home/jackson/.local/bin"
 export PATH="$PATH:/home/jackson/.cargo/bin"
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
+export PATH="$PATH:/home/jackson/.zen/bin/zen/"
+
+# pnpm
+export PNPM_HOME="/home/jackson/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
