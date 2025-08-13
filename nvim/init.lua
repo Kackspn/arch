@@ -27,7 +27,6 @@ vim.pack.add({
   { src = "https://github.com/scottmckendry/cyberdream.nvim" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 })
-vim.pack.update(vim.pack.get())
 
 -----------------------------------------------------
 --- PACKAGE SETUP
