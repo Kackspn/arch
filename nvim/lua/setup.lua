@@ -2,6 +2,17 @@
 require "stay-centered".setup({})
 
 ------------------------------------------------------------
+require "ibl".setup({
+  indent = {
+    smart_indent_cap = true,
+    tab_char = "|",
+  },
+  scope = {
+    enabled = false,
+  },
+})
+
+------------------------------------------------------------
 require "nvim-autopairs".setup({
   event = "InsertEnter",
 })
@@ -36,6 +47,7 @@ require "nvim-treesitter.configs".setup{
     "rust",
     "lua",
     "python",
+    "lua",
   },
   ignore_install = {},
   sync_install = false,

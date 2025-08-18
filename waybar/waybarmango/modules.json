@@ -5,11 +5,7 @@
     "dwl/tags": {
         "num-tags": 9,
         "hide-vacant": true,
-        "expand": false,
         "disable-click": false,
-        "tag-labels": [
-        ],
-    
     },
     "dwl/window": {
         "format": "{app_id} | {title}",
@@ -57,7 +53,7 @@
     },
     "clock": {
         "format": "{:%I:%M} ",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "{:%d-%m-%Y}",
     }
 
 }
