@@ -1,9 +1,7 @@
 #!/bin/bash
 
-rm ~/.config/configs/.zshrc
-rm ~/.config/configs/.p10k.zsh
-cp ~/.zshrc ~/.config/configs/
-cp ~/.p10k.zsh ~/.config/configs/
+cp ~/.zshrc ~/.config/.zshrc
+cp ~/.p10k.zsh ~/.config/.p10k.zsh
 git add .
 git commit -m "$1"
 git push
