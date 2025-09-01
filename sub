@@ -2,6 +2,7 @@
 
 cp ~/.zshrc ~/.config/.zshrc
 cp ~/.p10k.zsh ~/.config/.p10k.zsh
+sleep 1
 git add .
 git commit -m "$1"
 git push
