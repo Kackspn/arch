@@ -10,6 +10,16 @@ keymapset("n", "F", ":q!<CR>", opts)
 -- Source file
 keymapset("n", "<leader>o", ":update<CR>:source<CR>")
 
+-- Resize
+keymapset("n", "<A-k>", "<cmd>resize -2<CR>", opts)
+keymapset("n", "<A-j>", "<cmd>resize +2<CR>", opts)
+keymapset("n", "<A-l>", "<cmd>vertical resize -2<CR>", opts)
+keymapset("n", "<A-h>", "<cmd>vertical resize +2<CR>", opts)
+keymapset("i", "<A-k>", "<cmd>resize -2<CR>", opts)
+keymapset("i", "<A-j>", "<cmd>resize +2<CR>", opts)
+keymapset("i", "<A-l>", "<cmd>vertical resize -2<CR>", opts)
+keymapset("i", "<A-h>", "<cmd>vertical resize +2<CR>", opts)
+
 -- Nvim-tree
 keymapset("n", "<leader>m", ":NvimTreeToggle<CR>", opts)
 keymapset("n", "<leader>a", ":bprev<CR>", opts)
