@@ -1,13 +1,14 @@
 /*
 !.zshrc
+# !niri
 !.p10k.zsh
 !scripts
-!mango
+# !mango
 !nvim.bak
 !fontconfig
-!wofi
+# !wofi
 !rofi
-!waybar*
+!waybar
 !hypr
 !.gitignore
 !backlight

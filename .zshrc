@@ -345,3 +345,4 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+[ -s "/home/jackson/.jabba/jabba.sh" ] && source "/home/jackson/.jabba/jabba.sh"

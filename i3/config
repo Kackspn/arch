@@ -301,11 +301,11 @@ bindsym Ctrl+Shift+Mod1+s exec shutdown now
 #---------------------------------------------------------------
 
 bindsym Ctrl+Shift+Escape exec --no-startup-id gnome-system-monitor
-bindsym $mod+Shift+Return exec --no-startup-id ~/.zen/bin/zen/zen-bin
+bindsym $mod+Shift+Return exec --no-startup-id zen
 bindsym Ctrl+Mod1+s exec --no-startup-id steam
 bindsym Ctrl+Mod1+f exec --no-startup-id nemo 
 bindsym Ctrl+Shift+Mod1+l exec --no-startup-id lutris
-bindsym Ctrl+Mod1+v exec --no-startup-id flatpak run dev.vencord.Vesktop
+bindsym Ctrl+Mod1+v exec --no-startup-id vesktop
 bindsym Ctrl+Mod1+n exec --no-startup-id nicotine
 bindsym Ctrl+Mod1+e exec --no-startup-id eddie-ui
 # Disable touchpad
@@ -323,7 +323,7 @@ assign [class="vesktop"] $ws2
 ## Clipboard Screenshots
 #---------------------------------------------------------------
 
-bindsym Ctrl+Home exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png && notify-send "Window copied to clipboard"
+bindsym Home exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png && notify-send "Window copied to clipboard"
 bindsym Mod1+Home exec --no-startup-id maim | xclip -selection clipboard -t image/png && notify-send "Screen copied to clipboard"
 bindsym Ctrl+Shift+Home exec --no-startup-id maim --select | xclip -selection clipboard -t image/png && notify-send "Selection copied to clipboard" 
 
@@ -374,7 +374,7 @@ set $KP_0 90
 
 bindsym Ctrl+Mod1+a workspace $ws3 ; exec kitty -e rmpc
 
-bindcode Mod1+$KP_1 exec $rmpc togglepause 
+bindcode Mod1+$KP_1 exec ~/.config/rmpc/paused.sh
 bindcode Mod1+$KP_2 exec $rmpc prev
 bindcode Mod1+$KP_3 exec $rmpc next
 bindcode Mod1+$KP_5 exec $notify

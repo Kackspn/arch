@@ -1,5 +1,10 @@
 local keymapset = vim.keymap.set
 local opts = { silent = true, noremap = true }
+
+-- Plugin-view
+keymapset("n", "<leader>p", function() require("plugin-view").open() end )
+
+
 -- Save/exit commands
 keymapset("n", "C", ":write<CR>", opts)
 keymapset("i", "<C-c>", "<Escape>:write<CR>", opts)

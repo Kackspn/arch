@@ -10,6 +10,7 @@ require('nvimcmp')
 --- PACKAGES
 -----------------------------------------------------
 vim.pack.add({
+  { src = "https://github.com/adriankarlen/plugin-view.nvim.git" },
   { src = "https://github.com/kyza0d/xeno.nvim.git" },
   { src = "https://github.com/neovim/nvim-lspconfig" },
   { src = "https://github.com/0xstepit/flow.nvim" },

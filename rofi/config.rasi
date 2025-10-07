@@ -23,8 +23,8 @@ configuration {
     drun-display-format: "{icon} {name}";
     icon-theme: "Kora";
     /* Key binds */
-    kb-row-up: "Alt+k";
-    kb-row-down: "Alt+j";
+    kb-row-up: "Alt+k,Up";
+    kb-row-down: "Alt+j,Down";
     kb-cancel: "Escape,Super+d";
 }
 
