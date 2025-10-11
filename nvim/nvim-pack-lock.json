@@ -1,0 +1,41 @@
+{
+  "plugins": {
+    "LuaSnip": {
+      "rev": "7381330"
+    },
+    "cmp-buffer": [],
+    "cmp-cmdline": [],
+    "cmp-nvim-lsp": [],
+    "cmp-nvim-lua": [],
+    "cmp-path": [],
+    "cmp_luasnip": [],
+    "flow.nvim": [],
+    "indent-blankline.nvim": [],
+    "lazydev.nvim": {
+      "rev": "e28ce52"
+    },
+    "lualine.nvim": [],
+    "neocodeium": [],
+    "nvim-autopairs": [],
+    "nvim-cmp": [],
+    "nvim-lspconfig": {
+      "rev": "cc2f5f2"
+    },
+    "nvim-tree.lua": {
+      "rev": "e397756"
+    },
+    "nvim-treesitter": [],
+    "nvim-web-devicons": {
+      "rev": "b8221e4"
+    },
+    "plenary.nvim": [],
+    "plugin-view.nvim": [],
+    "stay-centered.nvim": [],
+    "telescope.nvim": [],
+    "tiny-inline-diagnostic.nvim": {
+      "rev": "6d8dc61"
+    },
+    "vim-highlightedyank": [],
+    "xeno.nvim": []
+  }
+}
