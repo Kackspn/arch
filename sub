@@ -1,7 +1,10 @@
 #!/bin/bash
 
+echo "Copying ~/.zshrc and ~/.p10k.zsh"
 cp ~/.zshrc ~/.config/.zshrc
 cp ~/.p10k.zsh ~/.config/.p10k.zsh
+echo "Finished copying"
+echo "Committing with commit message \"$1\""
 git add .
 git commit -m "$1"
 git push
