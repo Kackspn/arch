@@ -1,7 +1,7 @@
 {
   "plugins": {
     "LuaSnip": {
-      "rev": "7381330"
+      "rev": "3732756"
     },
     "cmp-buffer": [],
     "cmp-cmdline": [],
@@ -12,30 +12,42 @@
     "flow.nvim": [],
     "indent-blankline.nvim": [],
     "lazydev.nvim": {
-      "rev": "e28ce52"
+      "rev": "371cd74"
     },
-    "lualine.nvim": [],
-    "neocodeium": [],
-    "nvim-autopairs": [],
-    "nvim-cmp": [],
+    "lualine.nvim": {
+      "rev": "3946f01"
+    },
+    "neocodeium": {
+      "rev": "bfe790d"
+    },
+    "nvim-autopairs": {
+      "rev": "7a2c97c"
+    },
+    "nvim-cmp": {
+      "rev": "cf22c9e"
+    },
     "nvim-lspconfig": {
-      "rev": "cc2f5f2"
+      "rev": "2010fc6"
     },
     "nvim-tree.lua": {
-      "rev": "e397756"
+      "rev": "64e2192"
     },
     "nvim-treesitter": [],
     "nvim-web-devicons": {
-      "rev": "b8221e4"
+      "rev": "8dcb311"
     },
     "plenary.nvim": [],
     "plugin-view.nvim": [],
     "stay-centered.nvim": [],
-    "telescope.nvim": [],
+    "telescope.nvim": {
+      "rev": "84b9ba0"
+    },
     "tiny-inline-diagnostic.nvim": {
-      "rev": "6d8dc61"
+      "rev": "994c13d"
     },
     "vim-highlightedyank": [],
-    "xeno.nvim": []
+    "xeno.nvim": {
+      "rev": "f70c224"
+    }
   }
 }

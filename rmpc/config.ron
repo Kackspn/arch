@@ -10,7 +10,7 @@
     on_song_change: ["/home/jackson/.config/rmpc/notify"],
     // on_song_change: None, 
     volume_step: 2,
-    max_fps: 30,
+    max_fps: 60,
     scrolloff: 0,
     wrap_navigation: false,
     enable_mouse: true,
