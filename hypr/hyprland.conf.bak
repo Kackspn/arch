@@ -37,7 +37,6 @@ $terminal = kitty
 $fileManager = nemo 
 
 
-
 #################
 ### AUTOSTART ###
 #################
@@ -390,60 +389,13 @@ bindel = alt, e, exec, ~/.cargo/bin/rmpc next
 # windowrule = float,class:^(kitty)$,title:^(kitty)$
 
 # Ignore maximize requests from apps. You'll probably like this.
-
-# windowrule = suppressevent maximize, class:.*
-# windowrulev2 = float,class:(clipse)
-# windowrulev2 = size 622 652,class:(clipse)
-# windowrule = workspace 3,class:(rmpc)
-# windowrule = workspace 2,class:(vesktop)
-# windowrule = workspace 1,class:(lutris)
-# windowrule = workspace 2,class:(zen)
-
-windowrule {
-  name = clipseconfig
-  match:class = clipse
-  size = 622 652
-  float = on
-  center = on
-}
-windowrule {
-  name = rmpcconfig
-  match:class = rmpc
-  workspace = 3
-}
-windowrule {
-  name = zenconfig
-  match:class = zen
-  workspace = 2
-}
-windowrule {
-  name = vesktopconfig
-  match:class = vesktop
-  workspace = 2
-}
-windowrule {
-  name = lutrisconfig
-  match:class = lutris
-  workspace = 1
-}
-windowrule {
-  name = suppress
-  match:class = .*
-  suppress_event = maximize
-}
-windowrule {
-    # Fix some dragging issues with XWayland
-    name = fix-xwayland-drags
-    match:class = ^$
-    match:title = ^$
-    match:xwayland = true
-    match:float = true
-    match:fullscreen = false
-    match:pin = false
-
-    no_focus = true
-}
-
+windowrule = suppressevent maximize, class:.*
+windowrulev2 = float,class:(clipse)
+windowrulev2 = size 622 652,class:(clipse)
+windowrule = workspace 3,class:(rmpc)
+windowrule = workspace 2,class:(vesktop)
+windowrule = workspace 1,class:(lutris)
+windowrule = workspace 2,class:(zen)
 
 # Fix some dragging issues with XWayland
-# windowrule = nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0
+windowrule = nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0
