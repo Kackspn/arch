@@ -88,7 +88,7 @@
             "<C-c>":     Close,
             "<Esc>":     Close,
             "K":         MoveUp,
-            "<A-D>":     Delete,
+            "|":     Delete,
         },
         queue: {
             "D":       DeleteAll,
