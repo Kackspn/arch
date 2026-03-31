@@ -9,7 +9,7 @@ mkdir -p "$TMP_DIR"
 
 # Where to temporarily store the album art received from rmpc
 ALBUM_ART_PATH="$TMP_DIR/notification_cover"
-SONG=$(rmpc song)
+SONG=$(/usr/sbin/rmpc song)
 
 ARTIST=$(echo "$SONG" | jq -r '.metadata.artist | if type == "array" then join(" | ") else . end')
 TITLE=$(jq -r '.metadata.title' <<< "$SONG")
@@ -19,7 +19,7 @@ TITLE=$(jq -r '.metadata.title' <<< "$SONG")
 DEFAULT_ALBUM_ART_PATH="$TMP_DIR/default_album_art.jpg"
 
 # Save album art of the currently playing song to a file
-if ! rmpc albumart --output "$ALBUM_ART_PATH"; then
+if ! /usr/sbin/rmpc albumart --output "$ALBUM_ART_PATH"; then
     # Use default album art if rmpc returns non-zero exit code
     ALBUM_ART_PATH="${DEFAULT_ALBUM_ART_PATH}"
 fi
