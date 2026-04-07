@@ -1,6 +1,6 @@
 /*
-mpd/playlists
-clipse/tmp_files
+/mpd/playlists
+/clipse/tmp_files
 !.zshrc
 # !niri
 !.p10k.zsh
