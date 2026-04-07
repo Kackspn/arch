@@ -15,7 +15,6 @@
 !dunst
 !i3
 !kitty
-!mpd
 !Music
 !nvim
 !polybar
@@ -23,8 +22,6 @@
 !rmpc
 !volume
 !sub
-!clipse
 !mpd/mpd.conf
 !clipse/config.json
 !clipse/custom_theme.json
-
