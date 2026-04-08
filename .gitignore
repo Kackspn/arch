@@ -21,6 +21,6 @@
 !rmpc
 !volume
 !sub
-!mpd/mpd.conf
+!mpd
 !clipse/config.json
 !clipse/custom_theme.json
