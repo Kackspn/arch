@@ -104,6 +104,7 @@ alias vtube="cd ~/VTube/ && obs-gamecapture ./veadotube-mini"
 alias mine="cd ~/minecraft && taskset -c 0-19 ./startserver-java9.sh"
 alias tsc="sudo taskset -c 0-19 timeshift --create"
 alias tsd="sudo taskset -c 0-19 timeshift --delete-all"
+alias mirrorup="sudo reflector --save /etc/pacman.d/mirrorlist --protocol https --country Germany --latest 5 --sort age --fastest 5"
 
 # configure `time` format
 TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'
