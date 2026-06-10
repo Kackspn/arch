@@ -284,6 +284,8 @@ hl.bind(mainMod .. "+ J", hl.dsp.focus({direction = "down"}))
 hl.bind(mainMod .. "+ K", hl.dsp.focus({direction = "up"}))
 hl.bind(mainMod .. "+ L", hl.dsp.focus({direction = "right"}))
 
+hl.bind(mainMod .. "+ S", hl.dsp.layout("togglesplit"))
+
 -- closeWindowBind:set_enabled(false)
 
 -- Switch workspaces with mainMod + [0-9]
