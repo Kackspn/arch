@@ -47,10 +47,10 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("waybar -c ~/.config/waybar/waybarhypr/config -s ~/.config/waybar/waybarhypr/style.css")
   hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
   hl.exec_cmd("dunst & hyprpaper & mpd & lxpolkit")
-  hl.exec_cmd("hyprctl keyword device[elan0a02:01-04f3:30d8-touchpad]:enabled false ")
   hl.exec_cmd("clipse -listen")
 end)
 
+hl.exec_cmd("hyprctl keyword device[elan0a02:01-04f3:30d8-touchpad]:enabled false")
 hl.bind("CTRL + ALT + 1", hl.dsp.exec_cmd("hyprctl keyword device[elan0a02:01-04f3:30d8-touchpad]:enabled true && notify-send 'Touchpad enabled'"))
 hl.bind("CTRL + ALT + 0", hl.dsp.exec_cmd("hyprctl keyword device[elan0a02:01-04f3:30d8-touchpad]:enabled false && notify-send 'Touchpad disabled'"))
 
@@ -254,8 +254,8 @@ hl.gesture({
 -- Example per-device config
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Devices/ for more
 hl.device({
-    name        = "epic-mouse-v1",
-    sensitivity = -0.5,
+    name = "elan0a02:01-04f3:30d8-touchpad",
+    enabled = false,
 })
 
 
@@ -332,9 +332,9 @@ hl.bind("CTRL + ALT + SHIFT + Q", hl.dsp.dpms({action = "toggle"}))
 
 -- SCREENSHOTS
 hl.bind("HOME", hl.dsp.exec_cmd("grim - | wl-copy && notify-send 'Screen copied to clipboard'"))
-hl.bind("ALT + HOME", hl.dsp.exec_cmd("grim -g '$(slurp -w 0)' - | wl-copy && notify-send 'Region copied to clipboard'"))
-hl.bind("CTRL + ALT + HOME", hl.dsp.exec_cmd("grim && notify-send 'Screen saved to ~/Pictures/'"))
-hl.bind("CTRL + ALT + HOME", hl.dsp.exec_cmd("grim -g '$(slurp -w 0)' && notify-send 'Region saved to ~/Pictures/'"))
+hl.bind("ALT + HOME", hl.dsp.exec_cmd("~/.config/scripts/grimregioncb"))
+hl.bind("CTRL + HOME", hl.dsp.exec_cmd("grim && notify-send 'Screen saved to ~/Pictures/'"))
+hl.bind("CTRL + ALT + HOME", hl.dsp.exec_cmd("~/.config/scripts/grimregionsv"))
 
 
 --RMPC
