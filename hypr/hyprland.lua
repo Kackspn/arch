@@ -50,10 +50,8 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("clipse -listen")
 end)
 
-hl.exec_cmd("hyprctl keyword device[elan0a02:01-04f3:30d8-touchpad]:enabled false")
-hl.bind("CTRL + ALT + 1", hl.dsp.exec_cmd("hyprctl keyword device[elan0a02:01-04f3:30d8-touchpad]:enabled true && notify-send 'Touchpad enabled'"))
-hl.bind("CTRL + ALT + 0", hl.dsp.exec_cmd("hyprctl keyword device[elan0a02:01-04f3:30d8-touchpad]:enabled false && notify-send 'Touchpad disabled'"))
-
+hl.bind("CTRL + ALT + 1", hl.dsp.exec_cmd("hyprctl eval 'hl.device({name=\"elan0a02:01-04f3:30d8-touchpad\", enabled = true})"))
+hl.bind("CTRL + ALT + 0", hl.dsp.exec_cmd("hyprctl eval 'hl.device({name=\"elan0a02:01-04f3:30d8-touchpad\", enabled = false})"))
 
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
@@ -152,11 +150,11 @@ hl.curve("quick",          { type = "bezier", points = { {0.15, 0},    {0.1, 1} 
 -- Default springs
 hl.curve("easy",           { type = "spring", mass = 1, stiffness = 71.2633, dampening = 15.8273644 })
 
-hl.animation({ leaf = "global",        enabled = true,  speed = 10,   bezier = "default" })
+hl.animation({ leaf = "global",        enabled = true,  speed = 1,   bezier = "default" })
 hl.animation({ leaf = "border",        enabled = true,  speed = 5.39, bezier = "easeOutQuint" })
-hl.animation({ leaf = "windows",       enabled = true,  speed = 4.79, spring = "easy" })
-hl.animation({ leaf = "windowsIn",     enabled = true,  speed = 4.1,  spring = "easy",         style = "popin 87%" })
-hl.animation({ leaf = "windowsOut",    enabled = true,  speed = 1.49, bezier = "linear",       style = "popin 87%" })
+hl.animation({ leaf = "windows",       enabled = true,  speed = 4.79, bezier = "easeOutQuint" })
+hl.animation({ leaf = "windowsIn",     enabled = true,  speed = 4.1,  bezier = "easeOutQuint",style = "popin 87%" })
+hl.animation({ leaf = "windowsOut",    enabled = true,  speed = 1.49, bezier = "linear",style = "popin 87%" })
 hl.animation({ leaf = "fadeIn",        enabled = true,  speed = 1.73, bezier = "almostLinear" })
 hl.animation({ leaf = "fadeOut",       enabled = true,  speed = 1.46, bezier = "almostLinear" })
 hl.animation({ leaf = "fade",          enabled = true,  speed = 3.03, bezier = "quick" })
@@ -256,6 +254,7 @@ hl.gesture({
 hl.device({
     name = "elan0a02:01-04f3:30d8-touchpad",
     enabled = false,
+    sensitivity = 0,
 })
 
 
@@ -267,7 +266,7 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 hl.bind(mainMod .. "+ SHIFT + R", hl.dsp.exec_cmd("hyprctl reload && ~/.config/waybar/waybarhypr/init.sh"))
 hl.bind(mainMod .. "+ RETURN", hl.dsp.exec_cmd(terminal))
-hl.bind(mainMod .. "+ SHIFT + RETURN", hl.dsp.exec_cmd("~/.zen/bin/zen/zen-bin"))
+hl.bind(mainMod .. "+ SHIFT + RETURN", hl.dsp.exec_cmd("taskset -c 0-19 ~/.zen/bin/zen/zen-bin"))
 hl.bind(mainMod .. "+ SHIFT + Q", hl.dsp.window.kill())
 hl.bind(mainMod .. "+ SHIFT + E", hl.dsp.exit())
 hl.bind(mainMod .. "+ D", hl.dsp.exec_cmd("pkill rofi || rofi -show drun"))
@@ -323,9 +322,8 @@ hl.bind("ALT + F4", hl.dsp.exec_cmd("~/.config/backlight/inc.sh"))
 
 -- APP SHORTCUTS
 hl.bind("CTRL + SHIFT + ALT + L", hl.dsp.exec_cmd("lutris"))
-hl.bind("CTRL + ALT + A", hl.dsp.exec_cmd("kitty --class rmpc -e rmpc"))
 hl.bind("CTRL + ALT + S", hl.dsp.exec_cmd("steam"))
-hl.bind("CTRL + ALT + V", hl.dsp.exec_cmd("flatpak run dev.vencord.Vesktop"))
+hl.bind("CTRL + ALT + V", hl.dsp.exec_cmd("vesktop"))
 hl.bind("CTRL + ALT + N", hl.dsp.exec_cmd("nicotine"))
 hl.bind("CTRL + ALT + E", hl.dsp.exec_cmd("eddie-ui"))
 hl.bind("CTRL + SHIFT + ESCAPE", hl.dsp.exec_cmd("missioncenter"))
@@ -340,6 +338,7 @@ hl.bind("CTRL + ALT + HOME", hl.dsp.exec_cmd("~/.config/scripts/grimregionsv"))
 
 
 --RMPC
+hl.bind("CTRL + ALT + A", hl.dsp.exec_cmd("kitty --class rmpc -e rmpc"))
 hl.bind("ALT + KP_LEFT", hl.dsp.exec_cmd("~/.config/rmpc/dec"))
 hl.bind("ALT + KP_HOME", hl.dsp.exec_cmd("~/.config/rmpc/inc"))
 hl.bind("ALT + KP_END", hl.dsp.exec_cmd("~/.config/rmpc/paused.sh"))
@@ -348,19 +347,35 @@ hl.bind("ALT + KP_NEXT", hl.dsp.exec_cmd("rmpc next"))
 hl.bind("ALT + KP_BEGIN", hl.dsp.exec_cmd("~/.config/rmpc/notify"))
 hl.bind("ALT + KP_PRIOR", hl.dsp.exec_cmd("~/.config/rmpc/rand.sh"))
 hl.bind("ALT + KP_UP", hl.dsp.exec_cmd("~/.config/rmpc/repeat.sh"))
-
--- KA15
-hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("~/.config/rmpc/paused.sh"))
-hl.bind("XF86AudioNext", hl.dsp.exec_cmd("rmpc next"))
-hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("rmpc prev"))
-
-hl.bind("ALT + mouse_up", hl.dsp.exec_cmd("~/.config/rmpc/dec"))
-hl.bind("ALT + mouse_down", hl.dsp.exec_cmd("~/.config/rmpc/inc"))
+hl.bind("ALT + mouse_down", hl.dsp.exec_cmd("~/.config/rmpc/dec"))
+hl.bind("ALT + mouse_up", hl.dsp.exec_cmd("~/.config/rmpc/inc"))
 hl.bind("ALT + mouse:274", hl.dsp.exec_cmd("~/.config/rmpc/notify"))
 
 hl.bind("ALT + F", hl.dsp.exec_cmd("~/.config/rmpc/paused.sh"))
 hl.bind("ALT + Q", hl.dsp.exec_cmd("rmpc prev"))
 hl.bind("ALT + E", hl.dsp.exec_cmd("rmpc next"))
+
+--SIDRA
+-- hl.bind("CTRL + ALT + A", hl.dsp.exec_cmd("gamemoderun sidra --enable-features=VaapiVideoDecodeLinuxGL,VaapiVideoEncoder --enable-gpu-rasterization --enable-zero-copy --ignore-gpu-blocklist --ozone-platform-hint=auto"))
+-- hl.bind("ALT + KP_LEFT", hl.dsp.exec_cmd("~/.config/rmpc/mprisdec.sh"))
+-- hl.bind("ALT + KP_HOME", hl.dsp.exec_cmd("~/.config/rmpc/mprisinc.sh"))
+-- hl.bind("ALT + KP_END", hl.dsp.exec_cmd("~/.config/rmpc/mprispause.sh"))
+-- hl.bind("ALT + KP_DOWN", hl.dsp.exec_cmd("playerctl previous"))
+-- hl.bind("ALT + KP_NEXT", hl.dsp.exec_cmd("playerctl next"))
+-- hl.bind("ALT + KP_PRIOR", hl.dsp.exec_cmd("~/.config/rmpc/mprisrand.sh"))
+--
+-- hl.bind("ALT + mouse_down", hl.dsp.exec_cmd("~/.config/rmpc/mprisdec.sh"))
+-- hl.bind("ALT + mouse_up", hl.dsp.exec_cmd("~/.config/rmpc/mprisinc.sh"))
+--
+-- hl.bind("ALT + F", hl.dsp.exec_cmd("~/.config/rmpc/mprispause.sh"))
+-- hl.bind("ALT + Q", hl.dsp.exec_cmd("playerctl previous"))
+-- hl.bind("ALT + E", hl.dsp.exec_cmd("playerctl next"))
+--
+-- -- KA15
+-- hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("~/.config/rmpc/paused.sh"))
+-- hl.bind("XF86AudioNext", hl.dsp.exec_cmd("rmpc next"))
+-- hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("rmpc prev"))
+
 
 
 --------------------------------
@@ -428,6 +443,12 @@ hl.window_rule({
 })
 
 hl.window_rule({
+  name = "SidraConfig",
+  match = {class = "sidra"},
+  workspace = 3,
+})
+
+hl.window_rule({
   name = "ZenConfig",
   match = {class = "zen"},
   workspace = 2,
@@ -450,3 +471,4 @@ hl.window_rule({
   match = {class = "Overwatch.exe"},
   workspace = 1,
 })
+

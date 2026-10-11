@@ -75,7 +75,7 @@ alias sall="sudo taskset -c 0-19"
 alias all="taskset -c 0-19"
 alias pc="taskset -c 0-11"
 alias ec="taskset -c 12-19"
-alias sv="sudo nvim"
+alias sv="sudo -E nvim"
 alias grubup="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias gs="git status"
 alias gp="git pull"
@@ -343,9 +343,12 @@ export PATH="$PATH:/home/jackson/.zen/bin/zen/"
 
 # pnpm
 export PNPM_HOME="/home/jackson/.local/share/pnpm"
+export XDG_CONFIG_HOME="/home/jackson/.config"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
 [ -s "/home/jackson/.jabba/jabba.sh" ] && source "/home/jackson/.jabba/jabba.sh"
+
+
