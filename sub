@@ -1,10 +1,15 @@
 #!/bin/bash
 
+echo "---------------------------------------"
 echo "Copying ~/.zshrc and ~/.p10k.zsh"
+echo "---------------------------------------"
 cp ~/.zshrc ~/.config/.zshrc
 cp ~/.p10k.zsh ~/.config/.p10k.zsh
+echo "---------------------------------------"
 echo "Finished copying"
+echo "---------------------------------------"
 echo "Committing with commit message \"$1\""
+echo "---------------------------------------"
 git add .
 git commit -m "$1"
 git push
